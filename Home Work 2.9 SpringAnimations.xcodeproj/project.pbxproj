@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,14 @@
 		B5D085A0230BCFD3001E38BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D0859E230BCFD3001E38BF /* Main.storyboard */; };
 		B5D085A2230BCFD4001E38BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D085A1230BCFD4001E38BF /* Assets.xcassets */; };
 		B5D085A5230BCFD4001E38BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D085A3230BCFD4001E38BF /* LaunchScreen.storyboard */; };
+		B5D085AD230C2281001E38BF /* AnimationProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D085AC230C2281001E38BF /* AnimationProperty.swift */; };
+		F6A9950473DFF4552955626F /* Pods_Home_Work_2_9_SpringAnimations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8F00A51A91B3B77AABD1F0 /* Pods_Home_Work_2_9_SpringAnimations.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25FEB1FD205896751711CD11 /* Pods-Home Work 2.9 SpringAnimations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Work 2.9 SpringAnimations.release.xcconfig"; path = "Target Support Files/Pods-Home Work 2.9 SpringAnimations/Pods-Home Work 2.9 SpringAnimations.release.xcconfig"; sourceTree = "<group>"; };
+		27EBA88B6C5FCB3890C61C7B /* Pods-Home Work 2.9 SpringAnimations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Work 2.9 SpringAnimations.debug.xcconfig"; path = "Target Support Files/Pods-Home Work 2.9 SpringAnimations/Pods-Home Work 2.9 SpringAnimations.debug.xcconfig"; sourceTree = "<group>"; };
+		9F8F00A51A91B3B77AABD1F0 /* Pods_Home_Work_2_9_SpringAnimations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_Work_2_9_SpringAnimations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D08597230BCFD3001E38BF /* Home Work 2.9 SpringAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 2.9 SpringAnimations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D0859A230BCFD3001E38BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D0859C230BCFD3001E38BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		B5D085A1230BCFD4001E38BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D085A4230BCFD4001E38BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D085A6230BCFD4001E38BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D085AC230C2281001E38BF /* AnimationProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A9950473DFF4552955626F /* Pods_Home_Work_2_9_SpringAnimations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78305B68550738620DFF4259 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F8F00A51A91B3B77AABD1F0 /* Pods_Home_Work_2_9_SpringAnimations.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5D0858E230BCFD3001E38BF = {
 			isa = PBXGroup;
 			children = (
 				B5D08599230BCFD3001E38BF /* Home Work 2.9 SpringAnimations */,
 				B5D08598230BCFD3001E38BF /* Products */,
+				B764D6761869AEC81B401052 /* Pods */,
+				78305B68550738620DFF4259 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,56 @@
 		B5D08599230BCFD3001E38BF /* Home Work 2.9 SpringAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				B5D0859A230BCFD3001E38BF /* AppDelegate.swift */,
-				B5D0859C230BCFD3001E38BF /* ViewController.swift */,
+				B5D085AE230C22A7001E38BF /* Models */,
+				B5D085AF230C22B9001E38BF /* Views */,
+				B5D085B0230C22C7001E38BF /* Controllers */,
+				B5D085B1230C22E8001E38BF /* Etcetera */,
+			);
+			path = "Home Work 2.9 SpringAnimations";
+			sourceTree = "<group>";
+		};
+		B5D085AE230C22A7001E38BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5D085AC230C2281001E38BF /* AnimationProperty.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5D085AF230C22B9001E38BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				B5D0859E230BCFD3001E38BF /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5D085B0230C22C7001E38BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0859C230BCFD3001E38BF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5D085B1230C22E8001E38BF /* Etcetera */ = {
+			isa = PBXGroup;
+			children = (
 				B5D085A1230BCFD4001E38BF /* Assets.xcassets */,
+				B5D0859A230BCFD3001E38BF /* AppDelegate.swift */,
 				B5D085A3230BCFD4001E38BF /* LaunchScreen.storyboard */,
 				B5D085A6230BCFD4001E38BF /* Info.plist */,
 			);
-			path = "Home Work 2.9 SpringAnimations";
+			path = Etcetera;
+			sourceTree = "<group>";
+		};
+		B764D6761869AEC81B401052 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27EBA88B6C5FCB3890C61C7B /* Pods-Home Work 2.9 SpringAnimations.debug.xcconfig */,
+				25FEB1FD205896751711CD11 /* Pods-Home Work 2.9 SpringAnimations.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5D085A9230BCFD4001E38BF /* Build configuration list for PBXNativeTarget "Home Work 2.9 SpringAnimations" */;
 			buildPhases = (
+				4ABB8D3753ECA6A6C06EFE5E /* [CP] Check Pods Manifest.lock */,
 				B5D08593230BCFD3001E38BF /* Sources */,
 				B5D08594230BCFD3001E38BF /* Frameworks */,
 				B5D08595230BCFD3001E38BF /* Resources */,
+				AA42CED97CB60FEA0780A54F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +191,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4ABB8D3753ECA6A6C06EFE5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Home Work 2.9 SpringAnimations-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA42CED97CB60FEA0780A54F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Home Work 2.9 SpringAnimations/Pods-Home Work 2.9 SpringAnimations-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Home Work 2.9 SpringAnimations/Pods-Home Work 2.9 SpringAnimations-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Home Work 2.9 SpringAnimations/Pods-Home Work 2.9 SpringAnimations-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5D08593230BCFD3001E38BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D085AD230C2281001E38BF /* AnimationProperty.swift in Sources */,
 				B5D0859D230BCFD3001E38BF /* ViewController.swift in Sources */,
 				B5D0859B230BCFD3001E38BF /* AppDelegate.swift in Sources */,
 			);
@@ -280,10 +384,11 @@
 		};
 		B5D085AA230BCFD4001E38BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27EBA88B6C5FCB3890C61C7B /* Pods-Home Work 2.9 SpringAnimations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Home Work 2.9 SpringAnimations/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Home Work 2.9 SpringAnimations/Etcetera/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,10 +402,11 @@
 		};
 		B5D085AB230BCFD4001E38BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FEB1FD205896751711CD11 /* Pods-Home Work 2.9 SpringAnimations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Home Work 2.9 SpringAnimations/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Home Work 2.9 SpringAnimations/Etcetera/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
