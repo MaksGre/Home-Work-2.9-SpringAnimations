@@ -18,27 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Параметры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-zT-5F0" customClass="SpringLabel" customModule="Spring">
-                                <rect key="frame" x="100" y="157" width="214" height="180"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="999" constant="180" id="8Dc-mg-bxh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfD-M8-dex">
-                                <rect key="frame" x="68" y="637" width="278" height="60"/>
+                                <rect key="frame" x="68" y="637" width="278" height="80"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="jTU-dE-QIj"/>
+                                    <constraint firstAttribute="height" constant="80" id="jTU-dE-QIj"/>
                                 </constraints>
                                 <state key="normal" title="Run Animation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,21 +36,31 @@
                                     <action selector="startAnimation" destination="BYZ-38-t0r" eventType="touchUpInside" id="ihI-q5-4zG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEm-mT-Pfa" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="100" y="144" width="214" height="180"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Tkg-Fd-nru"/>
+                                </constraints>
+                                <state key="normal" title="Параметры">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AEm-mT-Pfa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="9Zs-s6-WNX"/>
+                            <constraint firstItem="AEm-mT-Pfa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="AHe-kf-FGc"/>
                             <constraint firstItem="pfD-M8-dex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="LXD-QU-wpo"/>
-                            <constraint firstItem="j5y-zT-5F0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="NRw-V1-00H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pfD-M8-dex" secondAttribute="bottom" multiplier="1.1" constant="95.299999999999955" id="S6y-EV-7o2"/>
-                            <constraint firstItem="pfD-M8-dex" firstAttribute="top" relation="greaterThanOrEqual" secondItem="j5y-zT-5F0" secondAttribute="bottom" constant="50" id="b40-ke-AjB"/>
+                            <constraint firstItem="pfD-M8-dex" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AEm-mT-Pfa" secondAttribute="bottom" constant="50" id="M4z-Jj-c6H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pfD-M8-dex" secondAttribute="bottom" multiplier="1.1" constant="73.299999999999955" id="S6y-EV-7o2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pfD-M8-dex" secondAttribute="trailing" constant="68" id="drv-Y7-Lo3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j5y-zT-5F0" secondAttribute="trailing" constant="100" id="oLD-7O-8Fd"/>
-                            <constraint firstItem="j5y-zT-5F0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="1.3" constant="100" id="s2S-YX-0Nn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AEm-mT-Pfa" secondAttribute="trailing" constant="100" id="q8H-LO-PFK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="animatedLabel" destination="j5y-zT-5F0" id="Ioy-Fp-B2b"/>
+                        <outlet property="animatedButton" destination="AEm-mT-Pfa" id="Eeb-bj-gEt"/>
                         <outlet property="runAnimationButton" destination="pfD-M8-dex" id="a21-05-bu6"/>
                     </connections>
                 </viewController>

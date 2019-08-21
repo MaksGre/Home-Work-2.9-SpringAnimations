@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ViewController.generateTextForLabel():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "animatedLabel.animation">
+            </PersistentString>
+            <PersistentString
+               value = "text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.selectAnimation():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "animationCurve">
+            </PersistentString>
+            <PersistentString
+               value = "animationPreset">
+            </PersistentString>
+            <PersistentString
+               value = "animatedLabel.animation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.startAnimation():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "animatedLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

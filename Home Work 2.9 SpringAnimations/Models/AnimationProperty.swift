@@ -10,7 +10,6 @@ import UIKit
 
 struct AnimationProperty {
     var name: String
-    var value: CGFloat
     var minValue: CGFloat
     var maxValue: CGFloat
 }

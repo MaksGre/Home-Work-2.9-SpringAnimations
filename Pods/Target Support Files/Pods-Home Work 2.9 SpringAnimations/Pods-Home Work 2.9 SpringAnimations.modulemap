@@ -1,0 +1,6 @@
+framework module Pods_Home_Work_2_9_SpringAnimations {
+  umbrella header "Pods-Home Work 2.9 SpringAnimations-umbrella.h"
+
+  export *
+  module * { export * }
+}

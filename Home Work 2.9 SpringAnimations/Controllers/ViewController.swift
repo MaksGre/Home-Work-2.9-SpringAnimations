@@ -12,14 +12,15 @@ class ViewController: UIViewController {
 
     //MARK: - Outlets
     
-    @IBOutlet var animatedLabel: SpringLabel!
     @IBOutlet var runAnimationButton: UIButton!
+    @IBOutlet var animatedButton: SpringButton!
     
     //MARK: - Properties
 
     private var animationPreset: Spring.AnimationPreset!
     private var animationCurve: Spring.AnimationCurve!
     private var animationProperty: AnimationProperty!
+    private var propertyValue: CGFloat!
     
     private let animations: [Spring.AnimationPreset] = [
         .Shake,
@@ -83,36 +84,40 @@ class ViewController: UIViewController {
     ]
     
     private var animationProperties: [AnimationProperty] = [
-        AnimationProperty(name: "force", value: 1, minValue: 1, maxValue: 5),
-        AnimationProperty(name: "duration", value: 1, minValue: 0.5, maxValue: 5),
-        AnimationProperty(name: "delay", value: 0, minValue: 0, maxValue: 5),
-        AnimationProperty(name: "scaleX", value: 0, minValue: 0, maxValue: 300),
-        AnimationProperty(name: "scaleY", value: 0, minValue: 0, maxValue: 300),
-        AnimationProperty(name: "rotate", value: 0, minValue: 0, maxValue: 5),
-        AnimationProperty(name: "damping", value: 0.7, minValue: 0, maxValue: 1),
-        AnimationProperty(name: "velocity", value: 0.7, minValue: 0, maxValue: 1),
+        AnimationProperty(name: "force", minValue: 1, maxValue: 5),
+        AnimationProperty(name: "duration", minValue: 0.5, maxValue: 5),
+        AnimationProperty(name: "delay", minValue: 0, maxValue: 5),
+        AnimationProperty(name: "scaleX", minValue: 0, maxValue: 300),
+        AnimationProperty(name: "scaleY", minValue: 0, maxValue: 300),
+        AnimationProperty(name: "rotate", minValue: 0, maxValue: 5),
+        AnimationProperty(name: "damping", minValue: 0, maxValue: 1),
+        AnimationProperty(name: "velocity", minValue: 0, maxValue: 1),
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureRunAnimationButton()
+        configureButtons()
         setupAnimation()
     }
     
     //MARK: - Actions
     
     @IBAction func startAnimation() {
-        generateTextForLabel()
-        //resetSettings()
+        resetSettings()
+        applyAnimations()
+        animatedButton.animate()
         setupAnimation()
     }
-
+    
     //MARK: - Private funcs
     
-    private func configureRunAnimationButton() {
+    private func configureButtons() {
         runAnimationButton.titleLabel?.lineBreakMode = .byWordWrapping
         runAnimationButton.titleLabel?.textAlignment = .center
+
+        animatedButton.titleLabel?.lineBreakMode = .byWordWrapping
+        animatedButton.titleLabel?.textAlignment = .center
     }
 
     private func setupAnimation() {
@@ -130,72 +135,53 @@ class ViewController: UIViewController {
 
         randomItem = Int.random(in: 0..<animationProperties.count)
         animationProperty = animationProperties[randomItem]
-        animationProperty.value = CGFloat.random(in:
+        propertyValue = CGFloat.random(in:
             animationProperty.minValue...animationProperty.maxValue)
+    }
+    
+    private func applyAnimations() {
         
         switch animationProperty.name {
-        case "force": animatedLabel.force = animationProperty.value
-        case "duration": animatedLabel.duration = animationProperty.value
-        case "delay": animatedLabel.delay = animationProperty.value
-        case "scaleX": animatedLabel.scaleX = animationProperty.value
-        case "force": animatedLabel.force = animationProperty.value
-        case "force": animatedLabel.force = animationProperty.value
-        case "force": animatedLabel.force = animationProperty.value
-        case "force": animatedLabel.force = animationProperty.value
+        case "force": animatedButton.force = propertyValue
+        case "duration": animatedButton.duration = propertyValue
+        case "delay": animatedButton.delay = propertyValue
+        case "scaleX": animatedButton.scaleX = propertyValue
+        case "scaleY": animatedButton.scaleY = propertyValue
+        case "rotate": animatedButton.rotate = propertyValue
+        case "damping": animatedButton.damping = propertyValue
+        case "velocity": animatedButton.velocity = propertyValue
+        default: return
         }
         
+        animatedButton.animation = animationPreset.rawValue
+        animatedButton.curve = animationCurve.rawValue
+        animatedButton.setTitle(runAnimationButton.titleLabel?.text,
+            for: .normal)
     }
     
     private func resetSettings() {
-        animatedLabel.force = 1
-        animatedLabel.duration = 1
-        animatedLabel.delay = 0
         
-        animatedLabel.damping = 0.7
-        animatedLabel.velocity = 0.7
-        animatedLabel.scaleX = 0
-        animatedLabel.scaleY = 0
-        animatedLabel.rotate = 0
+        let patternLabel = SpringLabel()
+        animatedButton.force = patternLabel.force
+        animatedButton.duration = patternLabel.duration
+        animatedButton.delay = patternLabel.delay
+        animatedButton.damping = patternLabel.damping
+        animatedButton.velocity = patternLabel.velocity
+        animatedButton.scaleX = patternLabel.scaleX
+        animatedButton.scaleY = patternLabel.scaleY
+        animatedButton.rotate = patternLabel.rotate
     }
     
     private func changeTextButton() {
-        runAnimationButton.setTitle("Run \(animationPreset.rawValue) with \(animationCurve.rawValue)", for: .normal)
+        let newText = generateText()
+        runAnimationButton.setTitle(newText, for: .normal)
     }
     
-    private func generateTextForLabel() -> String {
+    private func generateText() -> String {
         
-        var text = ""
-        
-        if animatedLabel.animation != "" {
-            text += "animation = \"\(animatedLabel.animation)\"\n"
-        }
-        if animatedLabel.curve != "" {
-            text += "curve = \"\(animatedLabel.curve)\"\n"
-        }
-        if animatedLabel.force != 1 {
-            text += String(format: "force =  %.1f\n", Double(animatedLabel.force))
-        }
-        if animatedLabel.duration != 0.7 {
-            text += String(format: "duration =  %.1f\n", Double(animatedLabel.duration))
-        }
-        if animatedLabel.delay != 0 {
-            text += String(format: "delay =  %.1f\n", Double(animatedLabel.delay))
-        }
-        if animatedLabel.scaleX != 1 {
-            text += String(format: "scaleX =  %.1f\n", Double(animatedLabel.scaleX))
-        }
-        if animatedLabel.scaleY != 1 {
-            text += String(format: "scaleY =  %.1f\n", Double(animatedLabel.scaleY))
-        }
-        if animatedLabel.rotate != 0 {
-            text += String(format: "rotate =  %.1f\n", Double(animatedLabel.rotate))
-        }
-        if animatedLabel.damping != 0.7 {
-            text += String(format: "damping =  %.1f\n", Double(animatedLabel.damping))
-        }
-        if animatedLabel.velocity != 0.7 {
-            text += String(format: "velocity =  %.1f\n", Double(animatedLabel.velocity))
-        }
+        var text = "Run\nanimation = \"\(animationPreset.rawValue)\"\n"
+        text += "curve = \"\(animationCurve.rawValue)\"\n"
+        text += String(format: "\(animationProperty.name) =  %.1f", Double(propertyValue))
         
         return text
     }
